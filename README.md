@@ -50,7 +50,7 @@ This is an official implementation of **PromptIQA: Boosting the Performance and 
 
 <div style="display: flex; justify-content: center;">
     <img style="border-radius: 0.3125em;" 
-    src="./image/framework/framework.svg" width="100%" alt=""/>
+    src="./image/framework/framework.png" width="100%" alt=""/>
 </div>
 <div style="font-size: large; text-align: center;">
     <p>Figure1: The framework of the proposed PromptIQA.</p>
@@ -81,16 +81,138 @@ TBU
 
 ---
 
-You can download the LIVEC, BID, SPAQ and KonIQ datasets from the following download link. (TBU)
-
-|        Dataset        |                        Image Number                        |  Score Type  |                                  Download Link                                  |
-|:---------------------:|:----------------------------------------------------------:|:------------:|:-------------------------------------------------------------------------------:|
-|         LIVEC         |     1162 images taken on a variety of mobile devices.      |     MOS      |       <a href="https://live.ece.utexas.edu/research/ChallengeDB/index.html" target="_blank">Link</a>       |
-|          BID          |                   586 real-blur images.                    |     MOS      | <a href="https://github.com/zwx8981/UNIQUE#link-to-download-the-bid-dataset" target="_blank">Link</a>      |
-|         SPAQ          |          11,125 images from 66 smartphone images.          |     MOS      |                     <a href="https://github.com/h4nwei/SPAQ" target="_blank">Link</a>                      |
-|         KonIQ         |  10,073 images selected from public multimedia resources.  |     MOS      |           <a href="http://database.mmsp-kn.de/koniq-10k-database.html" target="_blank">Link</a>           |
+You can download the total 12 datasets from the following download link. (TBU)
 
 
+<table>
+    <thead>
+        <tr>
+            <th>Dataset</th>
+            <th>Task</th>
+            <th>Ref. Image</th>
+            <th>Dist. Types</th>
+            <th>Image Number</th>
+            <th>Label Type</th>
+            <th>Range</th>
+            <th>Download</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>LIVE</td>
+            <td  rowspan="4">Synthetic Distortion <br>Nature IQA</td>
+            <td>29</td>
+            <td>5</td>
+            <td>779</td>
+            <td>DMOS</td>
+            <td>[1, 100]</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>CSIQ</td>
+            <td>30</td>
+            <td>6</td>
+            <td>866</td>
+            <td>DMOS</td>
+            <td>[0, 1]</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>TID2013</td>
+            <td>25</td>
+            <td>24</td>
+            <td>3,000</td>
+            <td>MOS</td>
+            <td>[0, 9]</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Kadid-10k</td>
+            <td>81</td>
+            <td>25</td>
+            <td>10,125</td>
+            <td>MOS</td>
+            <td>[1, 5]</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>BID</td>
+            <td rowspan="4">Authentic Distortion <br>Nature IQA</td>
+            <td>-</td>
+            <td>-</td>
+            <td>586</td>
+            <td>MOS</td>
+            <td>[0, 5]</td>
+            <td><a href="https://github.com/zwx8981/UNIQUE#link-to-download-the-bid-dataset" target="_blank">Link</a></td>
+        </tr>
+        <tr>
+            <td>SPAQ</td>
+            <td>-</td>
+            <td>-</td>
+            <td>11,125</td>
+            <td>MOS</td>
+            <td>[0, 100]</td>
+            <td> <a href="https://github.com/h4nwei/SPAQ" target="_blank">Link</a>    </td>
+        </tr>
+        <tr>
+            <td>LIVEC</td>
+            <td>-</td>
+            <td>-</td>
+            <td>1,162</td>
+            <td>MOS</td>
+            <td>[1, 100]</td>
+            <td><a href="https://live.ece.utexas.edu/research/ChallengeDB/index.html" target="_blank">Link</a> </td>
+        </tr>
+        <tr>
+            <td>KonIQ-10K</td>
+            <td>-</td>
+            <td>-</td>
+            <td>10,073</td>
+            <td>MOS</td>
+            <td>[0, 100]</td>
+            <td><a href="http://database.mmsp-kn.de/koniq-10k-database.html" target="_blank">Link</a> </td>
+        </tr>
+        <tr>
+            <td>GFIQA20k</td>
+            <td>Face IQA</td>
+            <td>-</td>
+            <td>-</td>
+            <td>19,988</td>
+            <td>MOS</td>
+            <td>[0, 1]</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>AGIQA3k</td>
+            <td rowspan="2">AI generated IQA</td>
+            <td>-</td>
+            <td>-</td>
+            <td>2,982</td>
+            <td>MOS</td>
+            <td>[0, 1]</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>AIGCIQA2023</td>
+            <td>-</td>
+            <td>-</td>
+            <td>2,400</td>
+            <td>MOS</td>
+            <td>[0, 1]</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>UWIQA</td>
+            <td>Underwater IQA</td>
+            <td>-</td>
+            <td>-</td>
+            <td>890</td>
+            <td>MOS</td>
+            <td>[0, 1]</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
 
 ### Training process
 
