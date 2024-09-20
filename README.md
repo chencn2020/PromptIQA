@@ -20,7 +20,6 @@ National Laboratory of Pattern Recognition, Institute of Automation, Chinese Aca
 [![Static Badge](https://img.shields.io/badge/Try_Demo-6B88E3?logo=youtubegaming&logoColor=DAE4EE)]([http://111.0.123.204:8000/](https://huggingface.co/spaces/Zevin2023/PromptIQA)) 
 [![GitHub Stars](https://img.shields.io/github/stars/chencn2020/PromptIQA?style=social)](https://github.com/chencn2020/PromptIQA)
 
-[Online Demo[TBU]]()
 
 ## Checklist
 
