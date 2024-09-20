@@ -17,7 +17,7 @@ National Laboratory of Pattern Recognition, Institute of Automation, Chinese Aca
 [![download](https://img.shields.io/github/downloads/chencn2020/PromptIQA/total.svg)](https://github.com/chencn2020/PromptIQA/releases)
 [![Open issue](https://img.shields.io/github/issues/chencn2020/PromptIQA)](https://github.com/chencn2020/PromptIQA/issues)
 [![Closed issue](https://img.shields.io/github/issues-closed/chencn2020/PromptIQA)](https://github.com/chencn2020/PromptIQA/issues)
-![visitors](https://visitor-badge.glitch.me/badge?page_id=chencn2020/PromptIQA)
+[![Static Badge](https://img.shields.io/badge/Try_Demo-6B88E3?logo=youtubegaming&logoColor=DAE4EE)]([http://111.0.123.204:8000/](https://huggingface.co/spaces/Zevin2023/PromptIQA)) 
 [![GitHub Stars](https://img.shields.io/github/stars/chencn2020/PromptIQA?style=social)](https://github.com/chencn2020/PromptIQA)
 
 [Online Demo[TBU]]()
