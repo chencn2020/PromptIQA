@@ -10,7 +10,8 @@ National Laboratory of Pattern Recognition, Institute of Automation, Chinese Aca
 
 :rocket:  :rocket: :rocket: **News:**
 - To be updated...
-- ✅ **March, 2023**: We created this repository.
+- ✅ **September, 2024**: We pubulish the online demo.
+- ✅ **March, 2024**: We created this repository.
 
 [![paper](https://img.shields.io/badge/arXiv-Paper-green.svg)]()
 [![download](https://img.shields.io/github/downloads/chencn2020/PromptIQA/total.svg)](https://github.com/chencn2020/PromptIQA/releases)
@@ -27,11 +28,11 @@ National Laboratory of Pattern Recognition, Institute of Automation, Chinese Aca
 - [] Code for training
 - [] Code for testing
 - [] Checkpoint
-- [] [Online Demo]() on huggingface
+- [x] [Online Demo](https://huggingface.co/spaces/Zevin2023/PromptIQA) on huggingface
 
 ## Catalogue
 1. [Introduction](#Introduction)
-2. [Demonstrate](#Demonstrate)
+2. [Try Our Demo](#Demo)
 3. [Usage For Training](#Training)
 4. [Usage For Testing](#Testing)
 5. [Results](#Results)
@@ -56,10 +57,29 @@ This is an official implementation of **PromptIQA: Boosting the Performance and 
     <p>Figure1: The framework of the proposed PromptIQA.</p>
 </div>
 
+## Try Our Demo 🕹️
+<div id="Demo"></div>
+
+**Click** 👇 **to try our demo online.**
+
+[**web demo**](https://huggingface.co/spaces/Zevin2023/PromptIQA)
 
 
-## Demonstrate
-<div id="Demonstrate"></div>
+<table>
+  <tr>
+    <td style="text-align: center"><br>Point<br></td>
+    <td><img src="./assets/demo_point.gif" width="700"></td>
+  </tr>
+    <tr>
+    <td style="text-align: center"><br>Box<br></td>
+    <td><img src="./assets/demo_box.gif" width="700"></td>
+  </tr>
+   </tr>
+    <tr>
+    <td style="text-align: center"><br>Everything<br></td>
+    <td><img src="./assets/demo_all.gif" width="700"></td>
+  </tr>
+</table>
 
 
 ## Usage For Training
