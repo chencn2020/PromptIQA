@@ -114,7 +114,7 @@ python3 app.py
 You can use the following command to run the testing code:
 
 ```commandline
-python3 ./PromptIQA/run_promptIQA.py
+python3 test.py
 ```
 
 ---
