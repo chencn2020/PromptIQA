@@ -2,10 +2,6 @@
 
 - The 18th European Conference on Computer Vision ECCV 2024
 
-[Zewen Chen](https://zwchen.top/), Haina Qin, [Jun Wang](), **[Chunfeng Yuan]()**, [Bing Li]()
-
-National Laboratory of Pattern Recognition, Institute of Automation, Chinese Academy of Sciences (NLPR, CASIA).
-
 ---
 
 :rocket:  :rocket: :rocket: **News:**
