@@ -74,19 +74,15 @@ The dependencies for this work as follows:
 ```commandline
 einops==0.7.0
 numpy==1.24.4
-numpy==1.24.1
 opencv_python==4.8.0.76
 openpyxl==3.1.2
 Pillow==10.0.0
-Pillow==9.3.0
-Pillow==10.1.0
-scipy==1.11.4
+scipy
 timm==0.5.4
-torch==2.0.1
 torch==2.0.1+cu118
-torchvision==0.15.2
 torchvision==0.15.2+cu118
 tqdm==4.66.1
+gradio
 ```
 
 You can also run the following command to install the environment directly:
