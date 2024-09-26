@@ -1,0 +1,23 @@
+{
+    "livec": ["/disk1/Datasets/IQA/ChallengeDB_release", 1162],
+    "koniq10k": ["/disk1/Datasets/IQA/koniq-10k", 10073],
+    "flive": ["/disk1/Datasets/IQA/FLIVE_Database/database", 39810],
+    "bid": ["/disk1/Datasets/IQA/BID/ImageDatabase", 586],
+    "spaq": ["/disk1/Datasets/IQA/SPAQ", 11125],
+    "live": ["/disk1/Datasets/IQA/LIVE", 29],
+    "tid2013": ["/disk1/Datasets/IQA/TID2013", 25],
+    "tid2013_other": ["/disk1/Datasets/IQA/TID2013", 25],
+    "csiq": ["/disk1/Datasets/IQA/CSIQ", 30],
+    "csiq_other": ["/disk1/Datasets/IQA/CSIQ", 30],
+    "kadid": ["/disk1/Datasets/IQA/kadid10k", 81],
+    "kadid_other": ["/disk1/Datasets/IQA/kadid10k", 81],
+    "PIQ2023": ["/disk1/Datasets/IQA/2_portrait_image/PIQ2023", 81], 
+    "GFIQA_20k": ["/disk1/Datasets/IQA/2_portrait_image/GFIQA-20k", 19998],
+    "AGIQA_3k": ["/disk1/Datasets/IQA/3_AI_Generate/AGIQA_3k", 2982],
+    "UWIQA": ["/disk1/Datasets/IQA/4_underwater/UWIQA", 890],
+    "AIGCIQA2023": ["/disk1/Datasets/IQA/3_AI_Generate/AIGCIQA2023", 2400],
+    "tid2013_multi_dim": ["/disk1/Datasets/IQA/TID2013", 25],
+    "AIGCIQA3W": ["/disk1/Datasets/IQA/3_AI_Generate/AIGCQA-30K-Image", 14000],
+    "CGIQA6k": ["/disk1/Datasets/IQA/6_Screen/CGIQA6k", 6000],
+    "uhdiqa": ["/disk1/chenzewen/Competition/ECCV_2024_IQA/uhd_iqa", 4269]
+}

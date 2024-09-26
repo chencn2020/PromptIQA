@@ -10,6 +10,7 @@ National Laboratory of Pattern Recognition, Institute of Automation, Chinese Aca
 
 :rocket:  :rocket: :rocket: **News:**
 - To be updated...
+- ✅ **September, 2024**: We pubulish the checkpoints and testing code.
 - ✅ **September, 2024**: We pubulish the online demo.
 - ✅ **March, 2024**: We created this repository.
 
@@ -23,20 +24,20 @@ National Laboratory of Pattern Recognition, Institute of Automation, Chinese Aca
 
 ## Checklist
 
-- [] Code for PromptIQA
 - [] Code for training
-- [] Code for testing
-- [] Checkpoint
+- [x] Code for PromptIQA
+- [x] Code for testing
+- [x] Checkpoint
 - [x] [Online Demo](https://huggingface.co/spaces/Zevin2023/PromptIQA) on huggingface
 
 ## Catalogue
 1. [Introduction](#Introduction)
 2. [Try Our Demo](#Demo)
-3. [Usage For Training](#Training)
-4. [Usage For Testing](#Testing)
-5. [Results](#Results)
-6. [Citation](#Citation)
-7. [Acknowledgement](#Acknowledgement)
+<!-- 3. [Usage For Training](#Training) -->
+3. [Usage For Testing](#Testing)
+4. [Results](#Results)
+5. [Citation](#Citation)
+6. [Acknowledgement](#Acknowledgement)
 
 
 ## Introduction
@@ -61,27 +62,65 @@ This is an official implementation of **PromptIQA: Boosting the Performance and 
 
 **Click** 👇 **to try our demo online.**
 
-[**web demo**](https://huggingface.co/spaces/Zevin2023/PromptIQA)
+[**Huggingface**](https://huggingface.co/spaces/Zevin2023/PromptIQA)
+
+## Usage For Testing
+<div id="Inference"> </div>
+
+### Preparation
+
+The dependencies for this work as follows:
+
+```commandline
+einops==0.7.0
+numpy==1.24.4
+numpy==1.24.1
+opencv_python==4.8.0.76
+openpyxl==3.1.2
+Pillow==10.0.0
+Pillow==9.3.0
+Pillow==10.1.0
+scipy==1.11.4
+timm==0.5.4
+torch==2.0.1
+torch==2.0.1+cu118
+torchvision==0.15.2
+torchvision==0.15.2+cu118
+tqdm==4.66.1
+```
+
+You can also run the following command to install the environment directly:
+
+```commandline
+pip install -r requirements.txt
+```
+
+### Pre-training Weight
+
+You can get our pretraining weight from [Huggingface.](https://huggingface.co/Zevin2023/PromptIQA/tree/main)
+
+Then put the checkpoints in ```./PromptIQA/checkpoints```
+
+### Running On The Demo
+
+You can use the following command to run the test demo:
+
+```commandline
+python3 app.py
+```
+
+### Running Testing Code 
+
+You can use the following command to run the testing code:
+
+```commandline
+python3 ./PromptIQA/run_promptIQA.py
+```
+
+---
 
 
-<table>
-  <tr>
-    <td style="text-align: center"><br>Point<br></td>
-    <td><img src="./assets/demo_point.gif" width="700"></td>
-  </tr>
-    <tr>
-    <td style="text-align: center"><br>Box<br></td>
-    <td><img src="./assets/demo_box.gif" width="700"></td>
-  </tr>
-   </tr>
-    <tr>
-    <td style="text-align: center"><br>Everything<br></td>
-    <td><img src="./assets/demo_all.gif" width="700"></td>
-  </tr>
-</table>
-
-
-## Usage For Training
+<!-- ## Usage For Training
 <div id="Training"></div>
 
 ### Preparation
@@ -239,11 +278,8 @@ You can download the total 12 datasets from the following download link. (TBU)
 2. Run the following command to train the PromptIQA (Please review the [train.py](train.py) for more options).
 ```commandline
 TBU
-```
+``` -->
 
-
-## Usage For Testing
-<div id="Inference"> </div>
 
 
 
@@ -268,6 +304,15 @@ More detailed results can be found in the [paper]().
 <div id="Citation"> </div>
 
 If our work is useful to your research, we will be grateful for you to cite our paper:
+
+```
+@article{chen2024promptiqa,
+  title={PromptIQA: Boosting the Performance and Generalization for No-Reference Image Quality Assessment via Prompts},
+  author={Chen, Zewen and Qin, Haina and Wang, Juan and Yuan, Chunfeng and Li, Bing and Hu, Weiming and Wang, Liang},
+  journal={arXiv preprint arXiv:2403.04993},
+  year={2024}
+}
+```
 
 
 ## Acknowledgement
