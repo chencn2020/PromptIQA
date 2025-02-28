@@ -6,11 +6,12 @@
 
 :rocket:  :rocket: :rocket: **News:**
 - To be updated...
+- ✅ **February, 2025**: We pubulish the training code.
 - ✅ **September, 2024**: We pubulish the checkpoints and testing code.
 - ✅ **September, 2024**: We pubulish the online demo.
 - ✅ **March, 2024**: We created this repository.
 
-[![paper](https://img.shields.io/badge/arXiv-Paper-green.svg)]()
+[![paper](https://img.shields.io/badge/arXiv-Paper-green.svg)](https://link.springer.com/chapter/10.1007/978-3-031-73232-4_14)
 [![download](https://img.shields.io/github/downloads/chencn2020/PromptIQA/total.svg)](https://github.com/chencn2020/PromptIQA/releases)
 [![Open issue](https://img.shields.io/github/issues/chencn2020/PromptIQA)](https://github.com/chencn2020/PromptIQA/issues)
 [![Closed issue](https://img.shields.io/github/issues-closed/chencn2020/PromptIQA)](https://github.com/chencn2020/PromptIQA/issues)
@@ -20,7 +21,7 @@
 
 ## Checklist
 
-- [] Code for training
+- [x] Code for training
 - [x] Code for PromptIQA
 - [x] Code for testing
 - [x] Checkpoint
@@ -29,11 +30,11 @@
 ## Catalogue
 1. [Introduction](#Introduction)
 2. [Try Our Demo](#Demo)
-<!-- 3. [Usage For Training](#Training) -->
-3. [Usage For Testing](#Testing)
-4. [Results](#Results)
-5. [Citation](#Citation)
-6. [Acknowledgement](#Acknowledgement)
+3. [Usage For Training](#Training)
+4. [Usage For Testing](#Testing)
+5. [Results](#Results)
+6. [Citation](#Citation)
+7. [Acknowledgement](#Acknowledgement)
 
 
 ## Introduction
@@ -60,10 +61,14 @@ This is an official implementation of **PromptIQA: Boosting the Performance and 
 
 [**Huggingface**](https://huggingface.co/spaces/Zevin2023/PromptIQA)
 
-## Usage For Testing
-<div id="Inference"> </div>
+# Training and Testing
 
-### Preparation
+## Preparation
+
+Run the following script to create the environment:
+```commandline
+conda create -n promptiqa python=3.8 -y
+```
 
 The dependencies for this work as follows:
 
@@ -87,52 +92,12 @@ You can also run the following command to install the environment directly:
 pip install -r requirements.txt
 ```
 
-### Pre-training Weight
 
-You can get our pretraining weight from [Huggingface.](https://huggingface.co/Zevin2023/PromptIQA/tree/main)
-
-Then put the checkpoints in ```./PromptIQA/checkpoints```
-
-### Running On The Demo
-
-You can use the following command to run the test demo:
-
-```commandline
-python3 app.py
-```
-
-### Running Testing Code 
-
-You can use the following command to run the testing code:
-
-```commandline
-python3 test.py
-```
-
----
-
-
-<!-- ## Usage For Training
+## Usage For Training
 <div id="Training"></div>
 
-### Preparation
-
-The dependencies for this work as follows:
-
-```commandline
-TBU
-```
-
-You can also run the following command to install the environment directly:
-
-```commandline
-TBU
-```
-
----
-
+### Getting the datasets
 You can download the total 12 datasets from the following download link. (TBU)
-
 
 <table>
     <thead>
@@ -156,7 +121,7 @@ You can download the total 12 datasets from the following download link. (TBU)
             <td>779</td>
             <td>DMOS</td>
             <td>[1, 100]</td>
-            <td></td>
+            <td><a href="https://live.ece.utexas.edu/index.php" target="_blank">Link</a></td>
         </tr>
         <tr>
             <td>CSIQ</td>
@@ -165,7 +130,7 @@ You can download the total 12 datasets from the following download link. (TBU)
             <td>866</td>
             <td>DMOS</td>
             <td>[0, 1]</td>
-            <td></td>
+           <td><a href="https://s2.smu.edu/~eclarson/csiq.html" target="_blank">Link</a></td>
         </tr>
         <tr>
             <td>TID2013</td>
@@ -174,7 +139,7 @@ You can download the total 12 datasets from the following download link. (TBU)
             <td>3,000</td>
             <td>MOS</td>
             <td>[0, 9]</td>
-            <td></td>
+           <td><a href="https://www.ponomarenko.info/tid2013.htm" target="_blank">Link</a></td>
         </tr>
         <tr>
             <td>Kadid-10k</td>
@@ -183,7 +148,7 @@ You can download the total 12 datasets from the following download link. (TBU)
             <td>10,125</td>
             <td>MOS</td>
             <td>[1, 5]</td>
-            <td></td>
+           <td><a href="https://database.mmsp-kn.de/kadid-10k-database.html" target="_blank">Link</a></td>
         </tr>
         <tr>
             <td>BID</td>
@@ -230,7 +195,7 @@ You can download the total 12 datasets from the following download link. (TBU)
             <td>19,988</td>
             <td>MOS</td>
             <td>[0, 1]</td>
-            <td></td>
+           <td><a href="https://database.mmsp-kn.de/gfiqa-20k-database.html" target="_blank">Link</a></td>
         </tr>
         <tr>
             <td>AGIQA3k</td>
@@ -240,7 +205,7 @@ You can download the total 12 datasets from the following download link. (TBU)
             <td>2,982</td>
             <td>MOS</td>
             <td>[0, 1]</td>
-            <td></td>
+           <td><a href="https://github.com/lcysyzxdxc/AGIQA-3k-Database" target="_blank">Link</a></td>
         </tr>
         <tr>
             <td>AIGCIQA2023</td>
@@ -249,7 +214,7 @@ You can download the total 12 datasets from the following download link. (TBU)
             <td>2,400</td>
             <td>MOS</td>
             <td>[0, 1]</td>
-            <td></td>
+           <td><a href="https://github.com/wangjiarui153/aigciqa2023" target="_blank">Link</a></td>
         </tr>
         <tr>
             <td>UWIQA</td>
@@ -259,21 +224,62 @@ You can download the total 12 datasets from the following download link. (TBU)
             <td>890</td>
             <td>MOS</td>
             <td>[0, 1]</td>
-            <td></td>
+           <td><a href="" target="_blank">Link</a></td>
         </tr>
     </tbody>
 </table>
 
 ### Training process
 
-1. You should replace the dataset path in [dataset_info.json](./utils/dataset/dataset_info.json) to your own dataset path.
-2. Run the following command to train the PromptIQA (Please review the [train.py](train.py) for more options).
+1. You should replace the dataset path in [dataset_info.json](./PromptIQA/utils/dataset/dataset_info.json) to your own dataset path.
+2. Run the following command to train the PromptIQA (Please review the [train.py](train.py) for more options). 
+
+    P.S.⚠️ Supported datasets can be found in [dataset_info.json](./PromptIQA/utils/dataset/dataset_info.json)
+
 ```commandline
-TBU
-``` -->
+CUDA_VISIBLE_DEVICES=4,5,6,7 \
+python train.py --dist-url 'tcp://localhost:12754' \
+    --dataset spaq csiq livec koniq10k kadid live \ 
+    --multiprocessing-distributed --world-size 1 --rank 0 \
+    --batch_size 44 --epochs 50 --seed 2024 \
+    --random_flipping_rate 0.1 --random_scale_rate 0.5 \
+    --model promptiqa \
+    --save_path ./Exp/PromptIQA_2024
+```
+
+You can directly run the following script:
+
+```commandline
+sh train.sh
+```
+
+The number of prompts is ```batch_size / GPU_Num - 1```
 
 
+## Usage For Testing
+<div id="Inference"> </div>
 
+### Pre-training Weight
+
+You can get our pretraining weight from [Huggingface.](https://huggingface.co/Zevin2023/PromptIQA/tree/main)
+
+Then put the checkpoints in ```./PromptIQA/checkpoints```
+
+### Running On The Demo
+
+You can use the following command to run the test demo:
+
+```commandline
+python3 app.py
+```
+
+### Running Testing Code 
+
+You can use the following command to run the testing code:
+
+```commandline
+python3 test.py
+```
 
 ## Results
 <div id="Results"> </div>
@@ -290,21 +296,31 @@ More detailed results can be found in the [paper]().
     <p>Individual Dataset Comparison.</p>
 </div>
 
-
-
 ## Citation
 <div id="Citation"> </div>
 
 If our work is useful to your research, we will be grateful for you to cite our paper:
 
 ```
-@article{chen2024promptiqa,
-  title={PromptIQA: Boosting the Performance and Generalization for No-Reference Image Quality Assessment via Prompts},
+@inproceedings{chen2024promptiqa,
+  title={Promptiqa: Boosting the performance and generalization for no-reference image quality assessment via prompts},
   author={Chen, Zewen and Qin, Haina and Wang, Juan and Yuan, Chunfeng and Li, Bing and Hu, Weiming and Wang, Liang},
-  journal={arXiv preprint arXiv:2403.04993},
-  year={2024}
+  booktitle={European Conference on Computer Vision},
+  pages={247--264},
+  year={2024},
+  organization={Springer}
 }
 ```
+
+## Stars ⭐️
+
+<a href="https://star-history.com/#chencn2020/PromptIQA&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=chencn2020/PromptIQA&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=chencn2020/PromptIQA&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=chencn2020/PromptIQA&type=Date" />
+ </picture>
+</a>
 
 
 ## Acknowledgement

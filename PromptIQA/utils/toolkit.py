@@ -9,8 +9,17 @@ import torch.nn.parallel
 import torch.optim
 import torch.utils.data
 import torch.utils.data.distributed
+import torch.distributed as dist
 from scipy import stats
 import json
+
+@torch.no_grad()
+def gather_together(data):
+    dist.barrier()
+    world_size = dist.get_world_size()
+    gather_data = [None for _ in range(world_size)]
+    dist.all_gather_object(gather_data, data)
+    return gather_data
 
 def printArgs(args, savePath):
     with open(os.path.join(savePath, "args_info.log"), "w") as f:
@@ -43,7 +52,7 @@ def setup_seed(seed):
     )
 
 
-def get_data(dataset, data_path='./utils/dataset/dataset_info.json', split_seed=2023):
+def get_data(dataset, split_seed, data_path='./PromptIQA/utils/dataset/dataset_info.json'):
     """
         Load dataset information from the json file.
     """
@@ -55,16 +64,8 @@ def get_data(dataset, data_path='./utils/dataset/dataset_info.json', split_seed=
     random.seed(split_seed)
     random.shuffle(img_num)
 
-    if True or dataset != 'flive':
-        train_index = img_num[0: int(round(0.8 * len(img_num)))]
-        test_index = img_num[int(round(0.8 * len(img_num))): len(img_num)]
-    else:
-        print('Load FLIVE.')
-        with open('train_data.json') as f:
-            res = f.readlines()
-
-        train_index = eval(res[0].strip())
-        test_index = eval(res[1].strip())
+    train_index = img_num[0: int(round(0.8 * len(img_num)))]
+    test_index = img_num[int(round(0.8 * len(img_num))): len(img_num)]
 
     print('Split_seed', split_seed)
     print('train_index', train_index[:10], len(train_index))

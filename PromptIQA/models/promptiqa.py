@@ -222,6 +222,10 @@ class PromptIQA(nn.Module):
         self.prompt_feature = {}
 
     @torch.no_grad()
+    def clear(self):
+        self.prompt_feature = {}
+        
+    @torch.no_grad()
     def inference(self, x, data_type):
         prompt_feature = self.prompt_feature[data_type] # 1, n, 128
 
@@ -284,6 +288,42 @@ class PromptIQA(nn.Module):
         funsion_feature = self.mlp(torch.mean(funsion_feature, dim=1)).unsqueeze(0) # 1, n, 128
 
         self.prompt_feature[data_type] = funsion_feature.clone()
+    
+    def forward(self, x, score):
+        _x = self.vit(x)
+        x = self.extract_feature(self.save_output)  # bs, 28 * 28, 768 * 4
+        self.save_output.outputs.clear()
+
+        x = x.permute(0, 2, 1).contiguous()  # bs, 768 * 4, 28 * 28
+        x = rearrange(x, 'b (d n) (w h) -> b d n w h', d=4, n=self.dim_mlp, w=self.input_size, h=self.input_size)  # bs, 4, 768, 28, 28
+        x = x.permute(1, 0, 2, 3, 4).contiguous()  # 4, bs, 768, 28, 28
+
+        # Different Opinion Features (DOF)
+        DOF = torch.tensor([]).cuda()
+        for index, _ in enumerate(self.MALs):
+            DOF = torch.cat((DOF, self.MALs[index](x).unsqueeze(0)), dim=0)
+        DOF = rearrange(DOF, 'n c d (w h) -> n c d w h', w=self.input_size, h=self.input_size)  # M, bs, 768, 28, 28
+
+        # Image Quality Score Regression
+        fusion_mal = self.fusion_mal(DOF).permute(0, 2, 1).contiguous()  # bs, 28 * 28 768
+        IQ_feature = self.block(fusion_mal).permute(0, 2, 1).contiguous() # bs, 768, 28 * 28
+        IQ_feature = rearrange(IQ_feature, 'c d (w h) -> c d w h', w=self.input_size, h=self.input_size) # bs, 768, 28, 28
+        img_feature = self.cnn(IQ_feature).squeeze(-1).squeeze(-1).unsqueeze(1) # bs, 1, 128
+
+        score_feature = score.expand(-1, 128) # bs, 128
+
+        funsion_feature = self.i_p_fusion(torch.cat((img_feature, score_feature.unsqueeze(1)), dim=1)) # bs, 2, 128
+        funsion_feature = self.mlp(torch.mean(funsion_feature, dim=1)) #bs, 128
+        funsion_feature = self.expand(funsion_feature) # bs, bs - 1, 128
+        funsion_feature = self.prompt_fusion(funsion_feature) # bs, bs - 1, 128
+
+        fusion = self.blocks(torch.cat((img_feature, funsion_feature), dim=1)) # bs, 2, 1
+        fusion = self.norm(fusion)
+        fusion = self.score_block(fusion)
+        iq_res = fusion[:, 0].view(-1)
+        gt_res = score.view(-1)
+        
+        return iq_res, gt_res
     
     def extract_feature(self, save_output, block_index=[2, 5, 8, 11]):
         x1 = save_output.outputs[block_index[0]][:, 1:]
