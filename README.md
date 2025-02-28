@@ -11,7 +11,7 @@
 - ✅ **September, 2024**: We pubulish the online demo.
 - ✅ **March, 2024**: We created this repository.
 
-[![paper](https://img.shields.io/badge/arXiv-Paper-green.svg)](https://link.springer.com/chapter/10.1007/978-3-031-73232-4_14)
+[![paper](https://img.shields.io/badge/Paper-green.svg)](https://link.springer.com/chapter/10.1007/978-3-031-73232-4_14)
 [![download](https://img.shields.io/github/downloads/chencn2020/PromptIQA/total.svg)](https://github.com/chencn2020/PromptIQA/releases)
 [![Open issue](https://img.shields.io/github/issues/chencn2020/PromptIQA)](https://github.com/chencn2020/PromptIQA/issues)
 [![Closed issue](https://img.shields.io/github/issues-closed/chencn2020/PromptIQA)](https://github.com/chencn2020/PromptIQA/issues)
